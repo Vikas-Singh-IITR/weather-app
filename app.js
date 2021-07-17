@@ -1,4 +1,5 @@
 const request = require("request");
+const geocode = require("./utils/geocode");
 
 // const url = `http://api.weatherstack.com/current?access_key=abca57572ddfbbd79228cd9ef0185690&query=32.8267,-122.4233`;
 
@@ -15,17 +16,16 @@ const request = require("request");
 //   }
 // });
 
-const geocodeUrl =
-  "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoidnM3MjY0NzIiLCJhIjoiY2tyNzBtOXZ6MGI3NTJxcGdoNWRxa2dkbiJ9.OT40_H70F5ZduYC22oeCvw";
+// const geocodeUrl =
+//   "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoidnM3MjY0NzIiLCJhIjoiY2tyNzBtOXZ6MGI3NTJxcGdoNWRxa2dkbiJ9.OT40_H70F5ZduYC22oeCvw";
 
-request({ url: geocodeUrl, json: true }, (error, response) => {
-  if (error) {
-    console.log("Unable to connect to geolocation api");
-  } else if (response.body.features.length === 0) {
-    console.log("Unable to find the location");
-  } else {
-    const longitude = response.body.features[0].center[0];
-    const latitude = response.body.features[0].center[1];
-    console.log(latitude, longitude);
-  }
-});
+// request({ url: geocodeUrl, json: true }, (error, response) => {
+//   if (error) {
+//     console.log("Unable to connect to geolocation api");
+//   } else if (response.body.features.length === 0) {
+//     console.log("Unable to find the location");
+//   } else {
+//
+//     console.log(latitude, longitude);
+//   }
+// });
